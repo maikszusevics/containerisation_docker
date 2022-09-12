@@ -8,6 +8,9 @@ Containers are a standardized unit of software that allows developers to isolate
 ### What is the difference between containerisation and virtualisation?
 Virtualization enables you to have multiple machines with different operating systems on the hardware, while containerization enables you to deploy multiple applications using the same operating system on a single virtual machine or server. 
 
+![image](https://user-images.githubusercontent.com/110176257/189632002-0e3750f6-78ad-447f-ab5c-5f8b3b73ee71.png)
+
+
 Virtualisation is great for deploying applications that require the full functionality of an operating system or when you want to use different operating systems for different tasks. Containers are a better choice when you priotritise minimizing the number of servers you’re using for multiple applications.
 
 ## What is Docker?
