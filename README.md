@@ -1,16 +1,16 @@
 # Containerisation with Docker
 
-#### What is containerisation?
+### What is containerisation?
 A software container encapsulates an application, often a single executable service or microservice along with its libraries, frameworks and other components.
 
 Containers are a standardized unit of software that allows developers to isolate their app from its environment, solving the “it works on my machine” headache. For millions of developers today, Docker is the standard to build and share containerized apps on desktops and cloud.
 
-#### What is the difference between containerisation and virtualisation?
+### What is the difference between containerisation and virtualisation?
 Virtualization enables you to have multiple machines with different operating systems on the hardware, while containerization enables you to deploy multiple applications using the same operating system on a single virtual machine or server. 
 
 Virtualisation is great for deploying applications that require the full functionality of an operating system or when you want to use different operating systems for different tasks. Containers are a better choice when you priotritise minimizing the number of servers you’re using for multiple applications.
 
-### What is Docker?
+## What is Docker?
 
 Docker is a platform as a service product which uses techniques like OS-level virtualisation to deliver software in packages called containers.
 
@@ -34,7 +34,7 @@ A container is a runnable instance of an image. You can create, start, stop, mov
 By default, a container is relatively well isolated from other containers and its host machine.
 
 
-### Whos is using docker?
+## Whos is using docker?
 Docker is used by over 50,000 companies worldwide:
 
 ![image](https://user-images.githubusercontent.com/110176257/189631180-078679b7-3ba2-4acf-9bc1-267e141a9488.png)
