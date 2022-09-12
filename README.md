@@ -37,6 +37,22 @@ A container is a runnable instance of an image. You can create, start, stop, mov
 By default, a container is relatively well isolated from other containers and its host machine.
 
 
+### Benefits of containerisation
+- Efficiency
+Containerization is more efficient than virtualization. Whereas virtualization is distributing several operating systems on a single server, containerization is more flexible and granular. Containers require minimal startup times, allowing developers to run more containers on the same compute capacity as one virtual machine.
+
+
+- Portability
+Containers create an executable software package abstracted away from the host OS. It is not dependent upon the host OS, making it portable and allowing it to run consistently and uniformly across any platform or cloud.
+
+- Agility
+
+
+- Faster app startup
+- Easier management
+
+
+
 ## Whos is using docker?
 Docker is used by over 50,000 companies worldwide:
 
