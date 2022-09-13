@@ -89,3 +89,18 @@ Some of the biggest companies using Docker include:
 
 - docker cp command  source-address destination-address
 - access denied - 
+
+
+```dockerfile
+# select base image 
+FROM nginx
+# label it
+LABEL MAINTAINER=maikszuse@gmail.com 
+# copy data from localhost to container
+COPY index.html /usr/share/nginx/html/
+# allow required port
+EXPOSE 80
+# execute required command
+CMD ["nginx", "-g", "daemon off;"]
+
+```
