@@ -76,6 +76,9 @@ Some of the biggest companies using Docker include:
 - The Washington Post 
 - Uber
 
+## Building an image 
+To build an image from an edited nginx container, I used the steps in [this guide](https://www.dataset.com/blog/create-docker-image/)
+
 
 
 
@@ -91,6 +94,10 @@ Some of the biggest companies using Docker include:
 - access denied - 
 
 
+## Automation with Dockerfile
+
+Created a Dockerfile which will create a container and execute commands in order to provision app container.
+
 ```dockerfile
 # select base image 
 FROM nginx
@@ -104,3 +111,12 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 
 ```
+
+
+### Building a Docker image for our Node app
+- create a micro-service for node-app
+- dockerfile inside app folder
+- create a script to package our node app 
+- create container of our image
+- should load it on port 3000 or port 80
+- push to docker hub
