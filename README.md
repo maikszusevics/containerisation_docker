@@ -75,3 +75,17 @@ Some of the biggest companies using Docker include:
 - Shopify
 - The Washington Post 
 - Uber
+
+
+
+
+## Creating index.html for nginx 
+
+- move file from localhost to container
+
+- delete the existing file
+
+- send file.html from localhhost to container
+
+- docker cp command  source-address destination-address
+- access denied - 
