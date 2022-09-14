@@ -89,10 +89,12 @@ Some of the biggest companies using Docker include:
 - `docker exec -it ID_of_container bash` the `-it` stands for "interactive" and it will let you control and run commands in the container, kind of like SSHing into a VM.
 - `docker build -t dockerhubname/imagename:versiontag` this builds an image.
 - `docker push dockerhubname/imagename` this pushes an image to a dockerhub repo.
-## Building an image 
+- `docker pull` this will download an image from the online repository as long as you enter the username and repo name correctly
+
+
 To build an image from an edited nginx container, I used the steps in [this guide](https://www.dataset.com/blog/create-docker-image/) (starting from step 6)
 
-
+- Docker images are immutable, you must do docker commit to save settings configurations and docker build to save everything.
 
 
 ## Creating index.html for nginx 
