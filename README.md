@@ -76,22 +76,37 @@ Some of the biggest companies using Docker include:
 - The Washington Post 
 - Uber
 
+
+## Docker commands:
+
+- `docker images` will list all images you have stored locally.
+- `docker ps` lists current running containers. `-a` at the end will show stopped ones too.
+- `docker run -d -p port:port imagename` will create a container and start the image. `-d` makes it detached, so you can still use the terminal after running the command.
+- `docker stop ID_of_container` stops container.
+- `docker start ID_of_container` starts stopped container.
+- `docker rm ID_of_container -f` forcefully deletes container.
+- `docker rmi Image_ID -f` forcefully deletes image.
+- `docker exec -it ID_of_container bash` the `-it` stands for "interactive" and it will let you control and run commands in the container, kind of like SSHing into a VM.
+- `docker build -t dockerhubname/imagename:versiontag` this builds an image.
+- `docker push dockerhubname/imagename` this pushes an image to a dockerhub repo.
 ## Building an image 
-To build an image from an edited nginx container, I used the steps in [this guide](https://www.dataset.com/blog/create-docker-image/)
+To build an image from an edited nginx container, I used the steps in [this guide](https://www.dataset.com/blog/create-docker-image/) (starting from step 6)
 
 
 
 
 ## Creating index.html for nginx 
 
-- move file from localhost to container
+Editing the index.html file of the default nginx container will customize the webpage shown by the container.
+The file is located at `/usr/share/nginx/html/`.
 
-- delete the existing file
+To edit this file, you may have to install updates as well as sudo and nano.
 
-- send file.html from localhhost to container
+In order to automate this, you can create a index.html file locally and then move it to the container with a command.
 
-- docker cp command  source-address destination-address
-- access denied - 
+move file from localhost to container using `docker cp index.html [imageID]:/usr/share/nginx/html`
+
+This will replace the existing file with the one you've edited
 
 
 ## Automation with Dockerfile
@@ -120,3 +135,33 @@ CMD ["nginx", "-g", "daemon off;"]
 - create container of our image
 - should load it on port 3000 or port 80
 - push to docker hub
+
+### Steps
+- Copy app folder from a working nodeapp
+- Create dockerfile in the same location as app folder
+```dockerfile
+# base image
+FROM node
+# label
+LABEL MAINTAINER=MAIKS
+# inside the container what would be the default working directory
+# pwd 
+# wrkdir /usr/src/app
+WORKDIR /usr/src/app
+# copy dependencies - app folder
+COPY package*.json ./
+# copy all files with .json to working directory
+# run npm commands
+RUN npm install  -g npm@7.20.6
+
+# COPY EVERYTHING FROM CURRENT LOCATION & PASTE IN DEFAULT LOCATION
+COPY . .
+# expose the port
+EXPOSE 3000
+
+# cmd ["node","app.js"]
+CMD ["node", "app.js"]
+```
+- Run docker commit and docker build to save it as image
+- Run docker run command using port 3000 for nodeapp
+- Use docker push command to upload image to dockerhub
