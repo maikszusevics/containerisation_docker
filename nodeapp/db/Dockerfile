@@ -1,5 +1,5 @@
 # select base image 
-FROM nginx
+FROM mongo
 # label it
 LABEL MAINTAINER=maikszuse@gmail.com 
 # copy data from localhost to container
