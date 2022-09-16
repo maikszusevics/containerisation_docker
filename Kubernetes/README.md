@@ -18,3 +18,4 @@ K8s clusters allow engineers to orchestrate and monitor containers across multip
 
 
 # Task: Create deployment with an autoscaling group for three pods (instances) 
+![image](https://user-images.githubusercontent.com/110176257/190611579-304b6432-cd4d-4ec9-8504-78cac7d1290a.png)
