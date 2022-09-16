@@ -1,0 +1,38 @@
+# K8 works with API version to declare the resoucres 
+# We have to declare the API version and the kind of service/component
+# services: deployment, service, pods, replicasets, crobjob, autoscaling
+# kubect get service_name - deployemnt - pod - rs 
+# Kube get deploy nginx_deploy (nginx_svc)
+# kubectl get pods 
+# kubectl describe pod pod_name 
+
+# YML is case senstitive - indentation is important
+# Use spaces not tab 
+apiVersion: apps/v1
+kind: Deployment # what kind of service/object you want to create
+
+
+# What would you like to call this deployment 
+metadata:
+  name: nginx-deployment # naming the deployment 
+spec: 
+  selector:
+    matchLabels:
+          app: nginx-deployment # look for this label to match k8 service 
+  # lets create a replica set of this with 3 instance pods 
+  replicas: 3
+  # template to use its label for k8 service to launch in the browser 
+  template:
+    metadata:
+      matchLabels:
+        app: nginx # this label connects to the service or any other k8 components 
+  # lets define the container spec
+    spec:
+      containers:
+      - name: nginx
+        image: maikszusevics/eng122-maiks
+        ports:
+        - containerPort: 80
+
+
+# Create a kubernetes nginx-service.yml to create 
