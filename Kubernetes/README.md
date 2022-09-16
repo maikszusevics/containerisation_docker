@@ -14,3 +14,7 @@ Kubernetes, also known as K8s, is an open-source system for automating deploymen
 ## What is K8 cluster
 
 K8s clusters allow engineers to orchestrate and monitor containers across multiple physical, virtual, and cloud servers. It is a grouping of nodes that run containerized apps in an efficient, automated, distributed, and scalable manner. 
+
+
+
+# Task: Create deployment with an autoscaling group for three pods (instances) 
